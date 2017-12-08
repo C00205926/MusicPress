@@ -20,15 +20,19 @@ class SceneManager
 
   jumpToScene(title)
   {
-
+    console.log("jump called");
+    console.log(title);
     for(var i = 0; i < this.titles.length; i++)
     {
       if(this.titles[i] == title)
       {
+        console.log(this.titles[i]);
         this.index = i;
       }
     }
     this.currentScene = this.scenes[this.index];
+    console.log("this = " + this);
+    this.render();
   }
 
   jumpToNextScene()
@@ -40,22 +44,22 @@ class SceneManager
       this.index = 0
     }
     this.currentScene = this.scenes[this.index];
+    console.log("Jump to next called");
+    console.log("this = " + this);
     this.render();
   }
 
   render()
   {
-    var canvas = document.getElementById('myCanvas');
+    console.log("render called");
+    //var canvas = document.getElementById('myCanvas');
     // Assign the canvas an id so we can reference it elsewhere.
-    canvas.id = 'myCanvas';
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-  	var ctx = canvas.getContext('2d');
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    var ctx = document.getElementById('myCanvas').getContext("2d");
+  	//var ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, ctx.width, ctx.height);
 
 
-    this.currentScene = this.scenes[this.index];
-    this.currentScene.render();
+    var currentScene = this.scenes[this.index];
+    currentScene.render();
   }
 }

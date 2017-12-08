@@ -15,11 +15,12 @@ class TitleScreen extends Scene
     this.y = 100;
   }
 
-  checkCollision(xCord, yCord)
+  checkCollisionTitle(xCord, yCord)
   {
     if(xCord >= this.x && xCord <= this.x + this.widthRec && yCord >= this.y && yCord <= this.y + this.heightRec)
      {
-       this.sceneManager.jumpToNextScene();
+       //gameNs.game.sceneManager.jumpToScene('Menu');
+       gameNs.game.sceneManager.jumpToNextScene();
      }
   }
 

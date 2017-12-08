@@ -11,7 +11,7 @@ class Game
 
 		this.titleScreen = new TitleScreen('Title')
 		this.menuScreen = new MainMenu('Menu');
-	  this.gameScreen = new GameScreen('Game Screen');
+	  this.gameScreen = new GameScreen('GameScreen');
 
 		this.sceneManager.createScene(this.titleScreen);
 		this.sceneManager.createScene(this.menuScreen);
