@@ -12,9 +12,9 @@ class GameScreen extends Scene
   {
     document.body.style.backgroundColor = "#0408ff";
 
-    var canvas = document.getElementById('myCanvas');
+    var canvas = document.getElementById('mycanvas');
     // Assign the canvas an id so we can reference it elsewhere.
-    canvas.id = 'myCanvas';
+    canvas.id = 'mycanvas';
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 

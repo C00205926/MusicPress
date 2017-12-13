@@ -4,7 +4,7 @@ class TitleScreen extends Scene
   {
     super(title);
 
-    this.sceneManager = new SceneManager();
+
 
     this.width = window.innerWidth;
     this.height = window.innerHeight;
@@ -19,25 +19,21 @@ class TitleScreen extends Scene
   {
     if(xCord >= this.x && xCord <= this.x + this.widthRec && yCord >= this.y && yCord <= this.y + this.heightRec)
      {
-       //gameNs.game.sceneManager.jumpToScene('Menu');
-       gameNs.game.sceneManager.jumpToNextScene();
+       gameNS.sceneManager.jumpToScene('Menu');
+       //gameNS.game.sceneManager.jumpToNextScene();
      }
   }
 
   render()
   {
     document.body.style.backgroundColor = "#ff15";
-    var canvas = document.getElementById('myCanvas');
+    var canvas = document.getElementById('mycanvas');
 
     // Assign the canvas an id so we can reference it elsewhere.
-    canvas.id = 'myCanvas';
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
 
     var ctx = canvas.getContext('2d');
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    var ctx = canvas.getContext('2d');
     ctx.font = '48px Agency FB';
     ctx.fillText(this.title, 10, 50);
 

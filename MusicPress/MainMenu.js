@@ -7,8 +7,6 @@ class MainMenu extends Scene
     this.width = window.innerWidth;
     this.height = window.innerHeight;
 
-    this.createDiv("Play");
-
     this.xPlay = 50;
     this.yPlay = 100;
     this.heightPlay = 100;
@@ -29,36 +27,25 @@ class MainMenu extends Scene
     this.widthExit = 300;
     this.heightExit = 100;
   }
-  createDiv(divId)
-  {
-    var div = document.createElement("div");
-    div.id = divId;
-    if(div.id === "Play")
-    {
-      div.innerHTML = '<img src=\'play.png\'>';
-      this.div = div;
-
-      div.style.position = "absolute";
-      div.style.left = (this.width/ 2) - 135 + "px";
-      div.style.top = (this.height/ 8) + 40 + "px";
-    }
-
-  }
 
   checkCollisionMenu(xCord, yCord)
   {
     if(xCord >= this.xPlay && xCord <= this.xPlay + this.widthPlay && yCord >= this.yPlay && yCord <= this.yPlay + this.heightPlay)
      {
-       gameNs.game.sceneManager.jumpToScene('GameScreen');
+       gameNS.sceneManager.jumpToScene('GameScreen');
+     }
+     if(xCord >= this.xOptions && xCord <= this.xOptions + this.widthOptions && yCord >= this.yOptions && yCord <= this.yOptions + this.heightOptions)
+     {
+       gameNS.sceneManager.jumpToScene('CreditsScreen');
      }
   }
   render()
   {
     document.body.style.backgroundColor = "#DDA0DD";
 
-    var canvas = document.getElementById('myCanvas');
+    var canvas = document.getElementById('mycanvas');
     // Assign the canvas an id so we can reference it elsewhere.
-    canvas.id = 'myCanvas';
+    canvas.id = 'mycanvas';
     var ctx = canvas.getContext('2d');
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
